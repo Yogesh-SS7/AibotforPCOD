@@ -1,0 +1,19 @@
+{
+    "name": "aibotforayurveda-root",
+    "version": "1.0.0",
+    "description": "Root package for AI Bot for Ayurveda",
+    "private": true,
+    "workspaces": [
+        "backend",
+        "mobile"
+    ],
+    "scripts": {
+        "start": "concurrently \"npm run backend\" \"npm run mobile\"",
+        "backend": "npm start --prefix backend",
+        "mobile": "npm start --prefix mobile",
+        "install:all": "npm install && npm install --prefix backend && npm install --prefix mobile"
+    },
+    "devDependencies": {
+        "concurrently": "^8.2.2"
+    }
+}

@@ -1,0 +1,742 @@
+{
+  "questionnaire": "PCOD Free India – Women's Health Assessment",
+  "version": "1.0",
+  "questions": [
+    {
+      "id": "Q1",
+      "section": "Demographics",
+      "question": "Age group",
+      "input_type": "MCQ",
+      "options": [
+        {
+          "code": "A",
+          "text": "Below 18",
+          "risk_score": 0,
+          "ayurveda_tag": null,
+          "next_question": "Q2"
+        },
+        {
+          "code": "B",
+          "text": "18-25",
+          "risk_score": 1,
+          "ayurveda_tag": null,
+          "next_question": "Q2"
+        },
+        {
+          "code": "C",
+          "text": "26-35",
+          "risk_score": 2,
+          "ayurveda_tag": null,
+          "next_question": "Q2"
+        },
+        {
+          "code": "D",
+          "text": "36-45",
+          "risk_score": 3,
+          "ayurveda_tag": null,
+          "next_question": "Q2"
+        },
+        {
+          "code": "E",
+          "text": "Above 45",
+          "risk_score": 4,
+          "ayurveda_tag": null,
+          "next_question": "Q2"
+        }
+      ]
+    },
+    {
+      "id": "Q2",
+      "section": "Demographics",
+      "question": "Area of residence",
+      "input_type": "MCQ",
+      "options": [
+        {
+          "code": "A",
+          "text": "Village",
+          "risk_score": 0,
+          "ayurveda_tag": null,
+          "next_question": "Q3"
+        },
+        {
+          "code": "B",
+          "text": "Urban",
+          "risk_score": 0,
+          "ayurveda_tag": null,
+          "next_question": "Q3"
+        }
+      ]
+    },
+    {
+      "id": "Q3",
+      "section": "Demographics",
+      "question": "Height (cm)",
+      "input_type": "Numeric",
+      "options": [
+        {
+          "code": null,
+          "text": "User Input",
+          "risk_score": 0,
+          "ayurveda_tag": null,
+          "next_question": "Q4"
+        }
+      ]
+    },
+    {
+      "id": "Q5",
+      "section": "Menstrual",
+      "question": "Menarche",
+      "input_type": "Numeric",
+      "options": [
+        {
+          "code": null,
+          "text": "User Input",
+          "risk_score": 0,
+          "ayurveda_tag": null,
+          "next_question": "Q5"
+        },
+        {
+          "code": "A",
+          "text": "Regular",
+          "risk_score": 0,
+          "ayurveda_tag": null,
+          "next_question": "Q6"
+        },
+        {
+          "code": "B",
+          "text": "Irregular",
+          "risk_score": 3,
+          "ayurveda_tag": "Vata",
+          "next_question": "Q6"
+        }
+      ]
+    },
+    {
+      "id": "Q6",
+      "section": "Menstrual",
+      "question": "Duration of bleeding",
+      "input_type": "MCQ",
+      "options": [
+        {
+          "code": "A",
+          "text": "<2 days",
+          "risk_score": 1,
+          "ayurveda_tag": "Vata",
+          "next_question": "Q7"
+        },
+        {
+          "code": "B",
+          "text": "2-3 days",
+          "risk_score": 0,
+          "ayurveda_tag": null,
+          "next_question": "Q7"
+        },
+        {
+          "code": "C",
+          "text": "4-7 days",
+          "risk_score": 0,
+          "ayurveda_tag": null,
+          "next_question": "Q7"
+        },
+        {
+          "code": "D",
+          "text": ">7 days",
+          "risk_score": 3,
+          "ayurveda_tag": "Pitta",
+          "next_question": "Q7"
+        }
+      ]
+    },
+    {
+      "id": "Q7",
+      "section": "Menstrual",
+      "question": "Blood colour",
+      "input_type": "MCQ",
+      "options": [
+        {
+          "code": "A",
+          "text": "Bright red",
+          "risk_score": 0,
+          "ayurveda_tag": "Normal",
+          "next_question": "Q8"
+        },
+        {
+          "code": "B",
+          "text": "Dark red",
+          "risk_score": 2,
+          "ayurveda_tag": "Artava Dushti",
+          "next_question": "Q8"
+        },
+        {
+          "code": "C",
+          "text": "Brown/Black",
+          "risk_score": 3,
+          "ayurveda_tag": "Artava Dushti",
+          "next_question": "Q8"
+        }
+      ]
+    },
+    {
+      "id": "Q8",
+      "section": "Menstrual",
+      "question": "Smell during menses",
+      "input_type": "MCQ",
+      "options": [
+        {
+          "code": "A",
+          "text": "No smell",
+          "risk_score": 0,
+          "ayurveda_tag": null,
+          "next_question": "Q9"
+        },
+        {
+          "code": "B",
+          "text": "Mild smell",
+          "risk_score": 1,
+          "ayurveda_tag": null,
+          "next_question": "Q9"
+        },
+        {
+          "code": "C",
+          "text": "Foul smell",
+          "risk_score": 3,
+          "ayurveda_tag": "Dushti",
+          "next_question": "Q9"
+        }
+      ]
+    },
+    {
+      "id": "Q9",
+      "section": "Menstrual",
+      "question": "Clots during menses",
+      "input_type": "MCQ",
+      "options": [
+        {
+          "code": "A",
+          "text": "No clots",
+          "risk_score": 0,
+          "ayurveda_tag": null,
+          "next_question": "Q10"
+        },
+        {
+          "code": "B",
+          "text": "Small clots",
+          "risk_score": 1,
+          "ayurveda_tag": "Kapha",
+          "next_question": "Q10"
+        },
+        {
+          "code": "C",
+          "text": "Large clots",
+          "risk_score": 3,
+          "ayurveda_tag": "Kapha",
+          "next_question": "Q10"
+        }
+      ]
+    },
+    {
+      "id": "Q10",
+      "section": "Menstrual",
+      "question": "Pain during menses",
+      "input_type": "MCQ",
+      "options": [
+        {
+          "code": "A",
+          "text": "No pain",
+          "risk_score": 0,
+          "ayurveda_tag": null,
+          "next_question": "Q11"
+        },
+        {
+          "code": "B",
+          "text": "Mild pain",
+          "risk_score": 1,
+          "ayurveda_tag": "Vata",
+          "next_question": "Q11"
+        },
+        {
+          "code": "C",
+          "text": "Moderate pain",
+          "risk_score": 2,
+          "ayurveda_tag": "Vata",
+          "next_question": "Q11"
+        },
+        {
+          "code": "D",
+          "text": "Severe pain",
+          "risk_score": 3,
+          "ayurveda_tag": "Vata",
+          "next_question": "Q11"
+        }
+      ]
+    },
+    {
+      "id": "Q11",
+      "section": "PCOD",
+      "question": "Excess hair growth",
+      "input_type": "MCQ",
+      "options": [
+        {
+          "code": "A",
+          "text": "No",
+          "risk_score": 0,
+          "ayurveda_tag": null,
+          "next_question": "Q12"
+        },
+        {
+          "code": "B",
+          "text": "Mild",
+          "risk_score": 1,
+          "ayurveda_tag": "Androgen",
+          "next_question": "Q12"
+        },
+        {
+          "code": "C",
+          "text": "Moderate",
+          "risk_score": 3,
+          "ayurveda_tag": "Androgen",
+          "next_question": "Q12"
+        },
+        {
+          "code": "D",
+          "text": "Severe",
+          "risk_score": 4,
+          "ayurveda_tag": "Androgen",
+          "next_question": "Q12"
+        }
+      ]
+    },
+    {
+      "id": "Q12",
+      "section": "PCOD",
+      "question": "Acne / skin issues",
+      "input_type": "MCQ",
+      "options": [
+        {
+          "code": "A",
+          "text": null,
+          "risk_score": 0,
+          "ayurveda_tag": null,
+          "next_question": "Q13"
+        },
+        {
+          "code": "B",
+          "text": "Occasional",
+          "risk_score": 1,
+          "ayurveda_tag": "Pitta",
+          "next_question": "Q13"
+        },
+        {
+          "code": "C",
+          "text": "Persistent",
+          "risk_score": 3,
+          "ayurveda_tag": "Pitta",
+          "next_question": "Q13"
+        }
+      ]
+    },
+    {
+      "id": "Q13",
+      "section": "PCOD",
+      "question": "Weight gain",
+      "input_type": "MCQ",
+      "options": [
+        {
+          "code": "A",
+          "text": "No",
+          "risk_score": 0,
+          "ayurveda_tag": null,
+          "next_question": "Q14"
+        },
+        {
+          "code": "B",
+          "text": "Yes",
+          "risk_score": 3,
+          "ayurveda_tag": "Kapha",
+          "next_question": "Q14"
+        }
+      ]
+    },
+    {
+      "id": "Q14",
+      "section": "PCOD",
+      "question": "Waist-hip ratio known",
+      "input_type": "MCQ",
+      "options": [
+        {
+          "code": "A",
+          "text": "Yes",
+          "risk_score": 0,
+          "ayurveda_tag": null,
+          "next_question": "Q14A"
+        },
+        {
+          "code": "B",
+          "text": "No",
+          "risk_score": 0,
+          "ayurveda_tag": null,
+          "next_question": "Q15"
+        }
+      ]
+    },
+    {
+      "id": "Q14A",
+      "section": "PCOD",
+      "question": "Waist-hip ratio",
+      "input_type": "Numeric",
+      "options": [
+        {
+          "code": null,
+          "text": "User Input",
+          "risk_score": 2,
+          "ayurveda_tag": "Central obesity",
+          "next_question": "Q15"
+        }
+      ]
+    },
+    {
+      "id": "Q15",
+      "section": "PCOD",
+      "question": "Dark patches on skin",
+      "input_type": "MCQ",
+      "options": [
+        {
+          "code": "A",
+          "text": "No",
+          "risk_score": 0,
+          "ayurveda_tag": null,
+          "next_question": "Q16"
+        },
+        {
+          "code": "B",
+          "text": "Yes",
+          "risk_score": 3,
+          "ayurveda_tag": "Insulin",
+          "next_question": "Q16"
+        }
+      ]
+    },
+    {
+      "id": "Q16",
+      "section": "Diet",
+      "question": "Eating pattern",
+      "input_type": "MCQ",
+      "options": [
+        {
+          "code": "A",
+          "text": "Balanced home food",
+          "risk_score": 0,
+          "ayurveda_tag": null,
+          "next_question": "Q17"
+        },
+        {
+          "code": "B",
+          "text": "Outside / junk food",
+          "risk_score": 3,
+          "ayurveda_tag": "Kapha",
+          "next_question": "Q17"
+        }
+      ]
+    },
+    {
+      "id": "Q17",
+      "section": "Diet",
+      "question": "Digestion",
+      "input_type": "MCQ",
+      "options": [
+        {
+          "code": "A",
+          "text": "Good",
+          "risk_score": 0,
+          "ayurveda_tag": null,
+          "next_question": "Q18"
+        },
+        {
+          "code": "B",
+          "text": "Gas / bloating",
+          "risk_score": 2,
+          "ayurveda_tag": "Vata",
+          "next_question": "Q18"
+        },
+        {
+          "code": "C",
+          "text": "Constipation",
+          "risk_score": 3,
+          "ayurveda_tag": "Vata",
+          "next_question": "Q18"
+        }
+      ]
+    },
+    {
+      "id": "Q18",
+      "section": "Diet",
+      "question": "Sugar cravings",
+      "input_type": "MCQ",
+      "options": [
+        {
+          "code": "A",
+          "text": "No",
+          "risk_score": 0,
+          "ayurveda_tag": null,
+          "next_question": "Q19"
+        },
+        {
+          "code": "B",
+          "text": "Yes",
+          "risk_score": 3,
+          "ayurveda_tag": "Kapha",
+          "next_question": "Q19"
+        }
+      ]
+    },
+    {
+      "id": "Q19",
+      "section": "Diet",
+      "question": "Water intake",
+      "input_type": "MCQ",
+      "options": [
+        {
+          "code": "A",
+          "text": "Adequate",
+          "risk_score": 0,
+          "ayurveda_tag": null,
+          "next_question": "Q20"
+        },
+        {
+          "code": "B",
+          "text": "Less",
+          "risk_score": 2,
+          "ayurveda_tag": "Vata",
+          "next_question": "Q20"
+        }
+      ]
+    },
+    {
+      "id": "Q20",
+      "section": "Diet",
+      "question": "Cold food intake",
+      "input_type": "MCQ",
+      "options": [
+        {
+          "code": "A",
+          "text": "Rare",
+          "risk_score": 0,
+          "ayurveda_tag": null,
+          "next_question": "Q21"
+        },
+        {
+          "code": "B",
+          "text": "Frequent",
+          "risk_score": 3,
+          "ayurveda_tag": "Kapha",
+          "next_question": "Q21"
+        }
+      ]
+    },
+    {
+      "id": "Q21",
+      "section": "Lifestyle",
+      "question": "Physical activity",
+      "input_type": "MCQ",
+      "options": [
+        {
+          "code": "A",
+          "text": "Active",
+          "risk_score": 0,
+          "ayurveda_tag": null,
+          "next_question": "Q22"
+        },
+        {
+          "code": "B",
+          "text": "Sedentary",
+          "risk_score": 3,
+          "ayurveda_tag": "Kapha",
+          "next_question": "Q22"
+        }
+      ]
+    },
+    {
+      "id": "Q22",
+      "section": "Lifestyle",
+      "question": "Sleep pattern",
+      "input_type": "MCQ",
+      "options": [
+        {
+          "code": "A",
+          "text": "Sound sleep",
+          "risk_score": 0,
+          "ayurveda_tag": null,
+          "next_question": "Q23"
+        },
+        {
+          "code": "B",
+          "text": "Late / disturbed",
+          "risk_score": 3,
+          "ayurveda_tag": "Vata",
+          "next_question": "Q23"
+        }
+      ]
+    },
+    {
+      "id": "Q23",
+      "section": "Lifestyle",
+      "question": "Bowel habits",
+      "input_type": "MCQ",
+      "options": [
+        {
+          "code": "A",
+          "text": "Regular",
+          "risk_score": 0,
+          "ayurveda_tag": null,
+          "next_question": "Q24"
+        },
+        {
+          "code": "B",
+          "text": "Constipation",
+          "risk_score": 3,
+          "ayurveda_tag": "Vata",
+          "next_question": "Q24"
+        }
+      ]
+    },
+    {
+      "id": "Q24",
+      "section": "Lifestyle",
+      "question": "Daily routine",
+      "input_type": "MCQ",
+      "options": [
+        {
+          "code": "A",
+          "text": "Regular",
+          "risk_score": 0,
+          "ayurveda_tag": null,
+          "next_question": "Q25"
+        },
+        {
+          "code": "B",
+          "text": "Irregular",
+          "risk_score": 3,
+          "ayurveda_tag": "Vata",
+          "next_question": "Q25"
+        }
+      ]
+    },
+    {
+      "id": "Q25",
+      "section": "Mental",
+      "question": "Stress level",
+      "input_type": "MCQ",
+      "options": [
+        {
+          "code": "A",
+          "text": "Low",
+          "risk_score": 0,
+          "ayurveda_tag": null,
+          "next_question": "Q26"
+        },
+        {
+          "code": "B",
+          "text": "High",
+          "risk_score": 3,
+          "ayurveda_tag": "Vata",
+          "next_question": "Q26"
+        }
+      ]
+    },
+    {
+      "id": "Q26",
+      "section": "Mental",
+      "question": "Mood swings",
+      "input_type": "MCQ",
+      "options": [
+        {
+          "code": "A",
+          "text": "No",
+          "risk_score": 0,
+          "ayurveda_tag": null,
+          "next_question": "Q27"
+        },
+        {
+          "code": "B",
+          "text": "Yes",
+          "risk_score": 3,
+          "ayurveda_tag": "Pitta",
+          "next_question": "Q27"
+        }
+      ]
+    },
+    {
+      "id": "Q27",
+      "section": "Mental",
+      "question": "Prakruti",
+      "input_type": "MCQ",
+      "options": [
+        {
+          "code": "A",
+          "text": "Vata",
+          "risk_score": 0,
+          "ayurveda_tag": null,
+          "next_question": "Q28"
+        },
+        {
+          "code": "B",
+          "text": "Pitta",
+          "risk_score": 0,
+          "ayurveda_tag": null,
+          "next_question": "Q28"
+        },
+        {
+          "code": "C",
+          "text": "Kapha",
+          "risk_score": 0,
+          "ayurveda_tag": null,
+          "next_question": "Q28"
+        }
+      ]
+    },
+    {
+      "id": "Q28",
+      "section": "Medical",
+      "question": "Any treatment taken",
+      "input_type": "MCQ",
+      "options": [
+        {
+          "code": "A",
+          "text": "No",
+          "risk_score": 0,
+          "ayurveda_tag": null,
+          "next_question": "Q29"
+        },
+        {
+          "code": "B",
+          "text": "Yes (describe)",
+          "risk_score": 1,
+          "ayurveda_tag": null,
+          "next_question": "Q29"
+        }
+      ]
+    },
+    {
+      "id": "Q29",
+      "section": "Medical",
+      "question": "Any tests done",
+      "input_type": "MCQ",
+      "options": [
+        {
+          "code": "A",
+          "text": "No",
+          "risk_score": 0,
+          "ayurveda_tag": null,
+          "next_question": "END"
+        },
+        {
+          "code": "B",
+          "text": "Yes (upload)",
+          "risk_score": 0,
+          "ayurveda_tag": null,
+          "next_question": "END"
+        }
+      ]
+    }
+  ]
+}

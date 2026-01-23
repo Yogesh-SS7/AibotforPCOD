@@ -1,0 +1,20 @@
+[
+    {
+        "id": "cough",
+        "condition": "Mild Cough",
+        "remedy": "Mix 1 tsp honey with a pinch of turmeric and black pepper. Take twice daily.",
+        "caution": "Consult a doctor if cough persists for more than a week."
+    },
+    {
+        "id": "indigestion",
+        "condition": "Indigestion",
+        "remedy": "Chew on a small piece of fresh ginger with rock salt before meals.",
+        "caution": "Avoid if you have high acidity or ulcers."
+    },
+    {
+        "id": "fatigue",
+        "condition": "Fatigue",
+        "remedy": "Drink warm milk with a pinch of nutmeg and saffron before bed.",
+        "caution": "Ensure you are not lactose intolerant."
+    }
+]

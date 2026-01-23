@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "question": "How would you describe your body frame?",
+    "options": [
+      { "text": "Thin, bony, small joints", "type": "Vata" },
+      { "text": "Medium build, muscular", "type": "Pitta" },
+      { "text": "Large build, heavy bone structure", "type": "Kapha" }
+    ]
+  },
+  {
+    "id": 2,
+    "question": "How is your digestion usually?",
+    "options": [
+      { "text": "Irregular, gas, bloating", "type": "Vata" },
+      { "text": "Strong, sharp hunger", "type": "Pitta" },
+      { "text": "Slow, steady, low hunger", "type": "Kapha" }
+    ]
+  }
+]
