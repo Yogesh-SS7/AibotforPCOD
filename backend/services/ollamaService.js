@@ -19,12 +19,18 @@ Rules:
 7. If symptoms are severe (severe pain, heavy bleeding), advise seeing a doctor immediately.
 `;
 
-const chatWithAI = async (userMessage) => {
+const chatWithAI = async (userMessage, contextData = null) => {
     try {
         console.log(`Sending request to Ollama (${MODEL_NAME})...`);
+
+        let finalSystemPrompt = SYSTEM_PROMPT;
+        if (contextData) {
+            finalSystemPrompt += `\n\nUSER CONTEXT:\n${JSON.stringify(contextData, null, 2)}\nUse this context to personalize your advice.`;
+        }
+
         const response = await axios.post(OLLAMA_URL, {
             model: MODEL_NAME,
-            prompt: `${SYSTEM_PROMPT}\n\nUser: ${userMessage}\nAssistant:`,
+            prompt: `${finalSystemPrompt}\n\nUser: ${userMessage}\nAssistant:`,
             stream: false
         });
 

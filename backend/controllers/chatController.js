@@ -7,7 +7,8 @@ exports.chat = async (req, res) => {
     }
 
     // Simple stateless chat for prototype
-    const aiResponse = await ollamaService.chatWithAI(message);
+    const { context } = req.body; // Optional context
+    const aiResponse = await ollamaService.chatWithAI(message, context);
 
     res.json({
         response: aiResponse,

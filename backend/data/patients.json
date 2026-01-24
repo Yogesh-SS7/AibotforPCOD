@@ -1,0 +1,17 @@
+{
+    "yasha33@gmail.com": {
+        "email": "yasha33@gmail.com",
+        "latest_assessment": {
+            "timestamp": "2026-01-23T17:58:46.641Z",
+            "risk_category": "High Risk",
+            "score": 66,
+            "observed_patterns": [],
+            "recommendations": [
+                "Consult a gynecologist",
+                "Focus on diet and exercise",
+                "Monitor symptoms"
+            ],
+            "disclaimer": "This tool is for screening purposes only and does not replace professional medical advice."
+        }
+    }
+}

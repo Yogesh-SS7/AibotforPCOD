@@ -21,6 +21,7 @@ const pcodController = require('../controllers/pcodController');
 // PCOD
 router.get('/pcod/questions', pcodController.getQuestions);
 router.post('/pcod/submit', pcodController.submitAssessment);
+router.post('/pcod/explain', pcodController.explainResult);
 
 // Remedies
 router.get('/remedies', remediesController.getRemedies);

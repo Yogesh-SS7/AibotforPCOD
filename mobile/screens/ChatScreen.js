@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, TextInput, TouchableOpacity, FlatList, KeyboardAvoidingView, Platform, ActivityIndicator } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { COLORS, SIZES } from '../theme';
+
 import api from '../services/api';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function ChatScreen() {
     const [messages, setMessages] = useState([
@@ -10,6 +12,13 @@ export default function ChatScreen() {
     ]);
     const [input, setInput] = useState('');
     const [loading, setLoading] = useState(false);
+    const [context, setContext] = useState(null);
+
+    useEffect(() => {
+        AsyncStorage.getItem('pcod_context').then(data => {
+            if (data) setContext(JSON.parse(data));
+        });
+    }, []);
 
     const sendMessage = async () => {
         if (!input.trim()) return;
@@ -20,7 +29,10 @@ export default function ChatScreen() {
         setLoading(true);
 
         try {
-            const res = await api.post('/chat', { message: userMsg.text });
+            const res = await api.post('/chat', {
+                message: userMsg.text,
+                context: context // Send PCOD context if available
+            });
             const aiMsg = {
                 id: (Date.now() + 1).toString(),
                 text: res.data.response,

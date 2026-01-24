@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, TouchableOpacity, ScrollView, ActivityIndicator
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { COLORS, SIZES } from '../theme';
 import api from '../services/api';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function DiagnosticScreen({ navigation }) {
     const [questions, setQuestions] = useState([]);
@@ -10,9 +11,22 @@ export default function DiagnosticScreen({ navigation }) {
     const [answers, setAnswers] = useState({});
     const [currentQIndex, setCurrentQIndex] = useState(0);
     const [result, setResult] = useState(null);
+    const [explanation, setExplanation] = useState(null);
+    const [explaining, setExplaining] = useState(false);
     const [inputText, setInputText] = useState("");
 
+
+    const [userEmail, setUserEmail] = useState(null);
+
     useEffect(() => {
+        // Load user email
+        AsyncStorage.getItem('user').then(data => {
+            if (data) {
+                const user = JSON.parse(data);
+                if (user.email) setUserEmail(user.email);
+            }
+        });
+
         api.get('/pcod/questions')
             .then(res => {
                 const data = res.data;
@@ -66,16 +80,38 @@ export default function DiagnosticScreen({ navigation }) {
         }
     };
 
+
     const submitAnalysis = async (finalAnswers) => {
         setLoading(true);
         try {
-            const res = await api.post('/pcod/submit', { answers: finalAnswers });
+            const payload = { answers: finalAnswers, email: userEmail };
+            const res = await api.post('/pcod/submit', payload);
             setResult(res.data);
+
+            // Save result locally for Chat context
+            await AsyncStorage.setItem('pcod_context', JSON.stringify(res.data));
+
+            setExplanation(null); // Reset explanation for new result
+            setExplaining(false);
         } catch (error) {
             console.error(error);
             Alert.alert("Error", "Could not submit analysis");
         } finally {
             setLoading(false);
+        }
+    };
+
+    const handleExplain = async () => {
+        if (!result) return;
+        setExplaining(true);
+        try {
+            const res = await api.post('/pcod/explain', { result });
+            setExplanation(res.data.explanation);
+        } catch (error) {
+            console.error(error);
+            Alert.alert("Error", "Could not get explanation");
+        } finally {
+            setExplaining(false);
         }
     };
 
@@ -103,6 +139,36 @@ export default function DiagnosticScreen({ navigation }) {
                         {result.recommendations.map((rec, i) => (
                             <Text key={i} style={styles.bullet}>• {rec}</Text>
                         ))}
+                    </View>
+
+                    <View style={styles.section}>
+                        <Text style={styles.subTitle}>Recommendations:</Text>
+                        {result.recommendations.map((rec, i) => (
+                            <Text key={i} style={styles.bullet}>• {rec}</Text>
+                        ))}
+                    </View>
+
+                    {/* AI Explanation Section */}
+                    <View style={styles.aiSection}>
+                        <Text style={styles.aiHeader}>Ritu AI Insights</Text>
+                        {!explanation && !explaining && (
+                            <TouchableOpacity style={styles.explainBtn} onPress={handleExplain}>
+                                <Text style={styles.explainBtnText}>✨ Explain Result with Ritu AI</Text>
+                            </TouchableOpacity>
+                        )}
+
+                        {explaining && (
+                            <View style={styles.loadingBox}>
+                                <ActivityIndicator color={COLORS.secondary} />
+                                <Text style={styles.loadingText}>Ritu is analyzing your result...</Text>
+                            </View>
+                        )}
+
+                        {explanation && (
+                            <View style={styles.explanationBox}>
+                                <Text style={styles.explanationText}>{explanation}</Text>
+                            </View>
+                        )}
                     </View>
 
                     <Text style={styles.disclaimer}>{result.disclaimer}</Text>
@@ -201,4 +267,13 @@ const styles = StyleSheet.create({
     text: { fontSize: 16, color: COLORS.text, marginBottom: 5 },
     bullet: { fontSize: 16, color: COLORS.text, marginBottom: 8, lineHeight: 22 },
     disclaimer: { fontSize: 13, color: COLORS.textLight, fontStyle: 'italic', textAlign: 'center', marginTop: 10, marginBottom: 30 },
+
+    aiSection: { marginTop: 20, marginBottom: 20, padding: 15, backgroundColor: '#FFF5F7', borderRadius: 15, borderLeftWidth: 4, borderLeftColor: COLORS.secondary },
+    aiHeader: { fontSize: 18, fontWeight: 'bold', color: COLORS.secondary, marginBottom: 10 },
+    explainBtn: { backgroundColor: COLORS.secondary, padding: 12, borderRadius: 8, alignItems: 'center' },
+    explainBtnText: { color: COLORS.white, fontWeight: 'bold' },
+    loadingBox: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', padding: 10 },
+    loadingText: { marginLeft: 10, color: COLORS.textLight },
+    explanationBox: { marginTop: 5 },
+    explanationText: { fontSize: 16, color: COLORS.text, lineHeight: 24, fontStyle: 'italic' },
 });
