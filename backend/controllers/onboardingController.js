@@ -31,19 +31,34 @@ const saveUser = (userData) => {
 };
 
 exports.initiateOnboarding = (req, res) => {
-    const { name, age, gender, phone } = req.body;
+    const { name, age, weight, city, phone, language, bmi, bmi_category } = req.body;
 
-    if (!name || !age || !gender || !phone) {
-        return res.status(400).json({ error: "Name, Age, Gender, and Phone are required." });
+    if (!name || !age || !weight || !city || !phone) {
+        return res.status(400).json({ error: "Name, Age, Weight, City, and Mobile Number are required." });
     }
+
+    // Determine ID (Sequential)
+    let users = [];
+    if (fs.existsSync(usersFile)) {
+        try {
+            users = JSON.parse(fs.readFileSync(usersFile));
+        } catch (e) { users = []; }
+    }
+    // Check if user exists to reuse ID, else new ID
+    const existing = users.find(u => u.phone === phone);
+    const userId = existing ? existing.id : (users.length + 1).toString();
 
     // Save temporary state or simplified user
     const user = {
-        id: Date.now().toString(),
+        id: userId,
         name,
         age,
-        gender,
+        weight,
+        city,
         phone,
+        language: language || 'English',
+        bmi,
+        bmi_category,
         onboardedAt: new Date().toISOString()
     };
 

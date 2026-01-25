@@ -1,20 +1,26 @@
 [
     {
-        "id": "cough",
-        "condition": "Mild Cough",
-        "remedy": "Mix 1 tsp honey with a pinch of turmeric and black pepper. Take twice daily.",
-        "caution": "Consult a doctor if cough persists for more than a week."
+        "id": "cinnamon_tea",
+        "condition": "Insulin Resistance",
+        "remedy": "Drink Cinnamon tea (Dalchini) once daily. It improves insulin sensitivity.",
+        "caution": "Avoid if you have low blood sugar."
     },
     {
-        "id": "indigestion",
-        "condition": "Indigestion",
-        "remedy": "Chew on a small piece of fresh ginger with rock salt before meals.",
-        "caution": "Avoid if you have high acidity or ulcers."
+        "id": "spearmint_tea",
+        "condition": "Hirsutism (Excess Hair)",
+        "remedy": "Drink Spearmint tea twice a day to reduce androgen levels.",
+        "caution": "Consistent use for 3-6 months is needed for results."
     },
     {
-        "id": "fatigue",
-        "condition": "Fatigue",
-        "remedy": "Drink warm milk with a pinch of nutmeg and saffron before bed.",
-        "caution": "Ensure you are not lactose intolerant."
+        "id": "flaxseeds",
+        "condition": "Hormonal Imbalance",
+        "remedy": "Consume 1 tsp of ground Flaxseeds (Alsi) daily for Omega-3s.",
+        "caution": "Drink plenty of water to prevent constipation."
+    },
+    {
+        "id": "licorice",
+        "condition": "Sugar Cravings",
+        "remedy": "Chew on a small piece of Yashtimadhu (Licorice) root.",
+        "caution": "Avoid if you have high blood pressure."
     }
 ]

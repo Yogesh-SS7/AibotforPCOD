@@ -33,9 +33,11 @@ export default function HomeScreen({ navigation }) {
 
                 <Text style={styles.sectionTitle}>Ritu PCOD Companion</Text>
 
+                <MenuItem title="PCOD Symptom Check" route="Diagnostic" color={COLORS.error} />
                 <MenuItem title="Ask Ritu AI" route="Chat" color={COLORS.secondary} />
                 <MenuItem title="Home Remedies" route="Remedies" color={COLORS.success} />
-                <MenuItem title="PCOD Symptom Check" route="Diagnostic" color={COLORS.error} />
+                <MenuItem title="Yoga for PCOD" route="Yoga" color={COLORS.primary} />
+                <MenuItem title="BMI Calculator" route="BMI" color={COLORS.title} />
 
             </ScrollView>
         </SafeAreaView>

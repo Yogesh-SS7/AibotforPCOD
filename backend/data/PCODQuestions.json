@@ -33,36 +33,6 @@
   ],
   "sections": [
     {
-      "section_id": "participant_info",
-      "title": "Participant Information",
-      "questions": [
-        {
-          "id": "P1",
-          "text": "Name",
-          "type": "text_input",
-          "required": false
-        },
-        {
-          "id": "P2",
-          "text": "Age",
-          "type": "number_input",
-          "required": true
-        },
-        {
-          "id": "P3",
-          "text": "City/District",
-          "type": "text_input",
-          "required": true
-        },
-        {
-          "id": "P4",
-          "text": "Contact Number",
-          "type": "number_input",
-          "required": false
-        }
-      ]
-    },
-    {
       "section_id": 1,
       "title": "Basic Health Profile",
       "questions": [
@@ -71,11 +41,26 @@
           "text": "What is your current age group?",
           "type": "single_choice",
           "options": [
-            { "text": "Below 18 years", "score": 0 },
-            { "text": "18-25 years", "score": 0 },
-            { "text": "26-35 years", "score": 0 },
-            { "text": "36-45 years", "score": 0 },
-            { "text": "Above 45 years", "score": 0 }
+            {
+              "text": "Below 18 years",
+              "score": 0
+            },
+            {
+              "text": "18-25 years",
+              "score": 0
+            },
+            {
+              "text": "26-35 years",
+              "score": 0
+            },
+            {
+              "text": "36-45 years",
+              "score": 0
+            },
+            {
+              "text": "Above 45 years",
+              "score": 0
+            }
           ]
         },
         {
@@ -83,9 +68,18 @@
           "text": "What is your marital status?",
           "type": "single_choice",
           "options": [
-            { "text": "Unmarried", "score": 0 },
-            { "text": "Married", "score": 0 },
-            { "text": "Other", "score": 0 }
+            {
+              "text": "Unmarried",
+              "score": 0
+            },
+            {
+              "text": "Married",
+              "score": 0
+            },
+            {
+              "text": "Other",
+              "score": 0
+            }
           ]
         },
         {
@@ -93,11 +87,26 @@
           "text": "Are you currently trying to conceive or have faced difficulty in conception?",
           "type": "single_choice",
           "options": [
-            { "text": "Not applicable", "score": 0 },
-            { "text": "No difficulty", "score": 0 },
-            { "text": "Trying for less than 1 year", "score": 1 },
-            { "text": "Trying for more than 1 year", "score": 3 },
-            { "text": "Have consulted a doctor for this", "score": 4 }
+            {
+              "text": "Not applicable",
+              "score": 0
+            },
+            {
+              "text": "No difficulty",
+              "score": 0
+            },
+            {
+              "text": "Trying for less than 1 year",
+              "score": 1
+            },
+            {
+              "text": "Trying for more than 1 year",
+              "score": 3
+            },
+            {
+              "text": "Have consulted a doctor for this",
+              "score": 4
+            }
           ]
         }
       ]
@@ -111,11 +120,26 @@
           "text": "How would you describe your menstrual cycle pattern over the past 6 months?",
           "type": "single_choice",
           "options": [
-            { "text": "Very regular (25-35 days)", "score": 0 },
-            { "text": "Mostly regular with occasional delays", "score": 1 },
-            { "text": "Irregular (cycle varies by >7 days)", "score": 2 },
-            { "text": "Very irregular or unpredictable", "score": 3 },
-            { "text": "Absent periods for 3+ months", "score": 4 }
+            {
+              "text": "Very regular (25-35 days)",
+              "score": 0
+            },
+            {
+              "text": "Mostly regular with occasional delays",
+              "score": 1
+            },
+            {
+              "text": "Irregular (cycle varies by >7 days)",
+              "score": 2
+            },
+            {
+              "text": "Very irregular or unpredictable",
+              "score": 3
+            },
+            {
+              "text": "Absent periods for 3+ months",
+              "score": 4
+            }
           ]
         },
         {
@@ -123,11 +147,26 @@
           "text": "What is the usual duration of your menstrual bleeding?",
           "type": "single_choice",
           "options": [
-            { "text": "4-7 days", "score": 0 },
-            { "text": "2-3 days", "score": 1 },
-            { "text": "Less than 2 days", "score": 2 },
-            { "text": "More than 7 days", "score": 3 },
-            { "text": "Highly variable", "score": 4 }
+            {
+              "text": "4-7 days",
+              "score": 0
+            },
+            {
+              "text": "2-3 days",
+              "score": 1
+            },
+            {
+              "text": "Less than 2 days",
+              "score": 2
+            },
+            {
+              "text": "More than 7 days",
+              "score": 3
+            },
+            {
+              "text": "Highly variable",
+              "score": 4
+            }
           ]
         },
         {
@@ -135,11 +174,26 @@
           "text": "How would you describe your menstrual flow?",
           "type": "single_choice",
           "options": [
-            { "text": "Light to moderate", "score": 0 },
-            { "text": "Very scanty (minimal bleeding)", "score": 2 },
-            { "text": "Heavy (frequent pad changes)", "score": 3 },
-            { "text": "Very heavy with clots", "score": 4 },
-            { "text": "Variable each cycle", "score": 2 }
+            {
+              "text": "Light to moderate",
+              "score": 0
+            },
+            {
+              "text": "Very scanty (minimal bleeding)",
+              "score": 2
+            },
+            {
+              "text": "Heavy (frequent pad changes)",
+              "score": 3
+            },
+            {
+              "text": "Very heavy with clots",
+              "score": 4
+            },
+            {
+              "text": "Variable each cycle",
+              "score": 2
+            }
           ]
         },
         {
@@ -147,11 +201,26 @@
           "text": "Do you experience significant pain or discomfort during periods?",
           "type": "single_choice",
           "options": [
-            { "text": "No pain", "score": 0 },
-            { "text": "Mild discomfort manageable without medicine", "score": 1 },
-            { "text": "Moderate pain requiring occasional medicine", "score": 2 },
-            { "text": "Severe pain affecting daily activities", "score": 3 },
-            { "text": "Extremely severe requiring medical attention", "score": 4 }
+            {
+              "text": "No pain",
+              "score": 0
+            },
+            {
+              "text": "Mild discomfort manageable without medicine",
+              "score": 1
+            },
+            {
+              "text": "Moderate pain requiring occasional medicine",
+              "score": 2
+            },
+            {
+              "text": "Severe pain affecting daily activities",
+              "score": 3
+            },
+            {
+              "text": "Extremely severe requiring medical attention",
+              "score": 4
+            }
           ]
         },
         {
@@ -159,11 +228,26 @@
           "text": "Have you noticed any abnormal hair growth on your face, chest, or abdomen?",
           "type": "single_choice",
           "options": [
-            { "text": "No unusual hair growth", "score": 0 },
-            { "text": "Mild facial hair (upper lip/chin)", "score": 1 },
-            { "text": "Moderate hair growth requiring regular removal", "score": 2 },
-            { "text": "Significant hair growth on face and body", "score": 3 },
-            { "text": "Excessive hair growth causing distress", "score": 4 }
+            {
+              "text": "No unusual hair growth",
+              "score": 0
+            },
+            {
+              "text": "Mild facial hair (upper lip/chin)",
+              "score": 1
+            },
+            {
+              "text": "Moderate hair growth requiring regular removal",
+              "score": 2
+            },
+            {
+              "text": "Significant hair growth on face and body",
+              "score": 3
+            },
+            {
+              "text": "Excessive hair growth causing distress",
+              "score": 4
+            }
           ]
         }
       ]
@@ -177,11 +261,26 @@
           "text": "How has your weight changed in the past 1-2 years?",
           "type": "single_choice",
           "options": [
-            { "text": "Remained stable", "score": 0 },
-            { "text": "Gradual healthy gain/loss", "score": 0 },
-            { "text": "Sudden unexplained weight gain (>5 kg)", "score": 2 },
-            { "text": "Difficulty losing weight despite efforts", "score": 3 },
-            { "text": "Severe obesity or rapid gain", "score": 4 }
+            {
+              "text": "Remained stable",
+              "score": 0
+            },
+            {
+              "text": "Gradual healthy gain/loss",
+              "score": 0
+            },
+            {
+              "text": "Sudden unexplained weight gain (>5 kg)",
+              "score": 2
+            },
+            {
+              "text": "Difficulty losing weight despite efforts",
+              "score": 3
+            },
+            {
+              "text": "Severe obesity or rapid gain",
+              "score": 4
+            }
           ]
         },
         {
@@ -189,10 +288,22 @@
           "text": "Where do you tend to accumulate weight most?",
           "type": "single_choice",
           "options": [
-            { "text": "No specific pattern / Evenly distributed", "score": 0 },
-            { "text": "Around hips and thighs", "score": 2 },
-            { "text": "Around waist and abdomen", "score": 3 },
-            { "text": "Don't gain weight easily", "score": 0 }
+            {
+              "text": "No specific pattern / Evenly distributed",
+              "score": 0
+            },
+            {
+              "text": "Around hips and thighs",
+              "score": 2
+            },
+            {
+              "text": "Around waist and abdomen",
+              "score": 3
+            },
+            {
+              "text": "Don't gain weight easily",
+              "score": 0
+            }
           ]
         },
         {
@@ -200,11 +311,26 @@
           "text": "Do you experience frequent skin issues?",
           "type": "single_choice",
           "options": [
-            { "text": "Clear skin with no issues", "score": 0 },
-            { "text": "Occasional pimples", "score": 1 },
-            { "text": "Persistent acne on face/back", "score": 2 },
-            { "text": "Severe acne with dark patches", "score": 3 },
-            { "text": "Oily skin with blackheads", "score": 2 }
+            {
+              "text": "Clear skin with no issues",
+              "score": 0
+            },
+            {
+              "text": "Occasional pimples",
+              "score": 1
+            },
+            {
+              "text": "Persistent acne on face/back",
+              "score": 2
+            },
+            {
+              "text": "Severe acne with dark patches",
+              "score": 3
+            },
+            {
+              "text": "Oily skin with blackheads",
+              "score": 2
+            }
           ]
         },
         {
@@ -212,11 +338,26 @@
           "text": "Have you noticed darkening of skin around neck, armpits, or groin?",
           "type": "single_choice",
           "options": [
-            { "text": "No darkening observed", "score": 0 },
-            { "text": "Slight darkening in one area", "score": 1 },
-            { "text": "Noticeable darkening in multiple areas", "score": 2 },
-            { "text": "Significant dark patches (Acanthosis nigricans)", "score": 4 },
-            { "text": "Unsure/haven't noticed", "score": 0 }
+            {
+              "text": "No darkening observed",
+              "score": 0
+            },
+            {
+              "text": "Slight darkening in one area",
+              "score": 1
+            },
+            {
+              "text": "Noticeable darkening in multiple areas",
+              "score": 2
+            },
+            {
+              "text": "Significant dark patches (Acanthosis nigricans)",
+              "score": 4
+            },
+            {
+              "text": "Unsure/haven't noticed",
+              "score": 0
+            }
           ]
         },
         {
@@ -224,11 +365,26 @@
           "text": "Do you experience unusual fatigue or tiredness?",
           "type": "single_choice",
           "options": [
-            { "text": "Energetic and active", "score": 0 },
-            { "text": "Occasional tiredness", "score": 1 },
-            { "text": "Frequently tired despite rest", "score": 2 },
-            { "text": "Constantly exhausted affecting daily work", "score": 3 },
-            { "text": "Extreme fatigue with weakness", "score": 4 }
+            {
+              "text": "Energetic and active",
+              "score": 0
+            },
+            {
+              "text": "Occasional tiredness",
+              "score": 1
+            },
+            {
+              "text": "Frequently tired despite rest",
+              "score": 2
+            },
+            {
+              "text": "Constantly exhausted affecting daily work",
+              "score": 3
+            },
+            {
+              "text": "Extreme fatigue with weakness",
+              "score": 4
+            }
           ]
         }
       ]
@@ -242,11 +398,26 @@
           "text": "What is your primary eating pattern?",
           "type": "single_choice",
           "options": [
-            { "text": "Regular balanced meals with fresh food", "score": 0 },
-            { "text": "Mostly home-cooked with some processed food", "score": 1 },
-            { "text": "Frequent outside/packaged food", "score": 3 },
-            { "text": "Irregular meals and timings", "score": 3 },
-            { "text": "Excessive eating or food cravings", "score": 4 }
+            {
+              "text": "Regular balanced meals with fresh food",
+              "score": 0
+            },
+            {
+              "text": "Mostly home-cooked with some processed food",
+              "score": 1
+            },
+            {
+              "text": "Frequent outside/packaged food",
+              "score": 3
+            },
+            {
+              "text": "Irregular meals and timings",
+              "score": 3
+            },
+            {
+              "text": "Excessive eating or food cravings",
+              "score": 4
+            }
           ]
         },
         {
@@ -254,11 +425,26 @@
           "text": "How would you describe your digestive fire (Agni) and digestion?",
           "type": "single_choice",
           "options": [
-            { "text": "Strong digestion, eat well and feel light", "score": 0 },
-            { "text": "Moderate digestion with occasional gas/bloating", "score": 1 },
-            { "text": "Weak digestion, feel heavy after meals", "score": 2 },
-            { "text": "Very slow digestion with constipation", "score": 3 },
-            { "text": "Irregular bowel movements with discomfort", "score": 4 }
+            {
+              "text": "Strong digestion, eat well and feel light",
+              "score": 0
+            },
+            {
+              "text": "Moderate digestion with occasional gas/bloating",
+              "score": 1
+            },
+            {
+              "text": "Weak digestion, feel heavy after meals",
+              "score": 2
+            },
+            {
+              "text": "Very slow digestion with constipation",
+              "score": 3
+            },
+            {
+              "text": "Irregular bowel movements with discomfort",
+              "score": 4
+            }
           ]
         },
         {
@@ -266,11 +452,26 @@
           "text": "How often do you consume sweets, refined flour (maida), or fried foods?",
           "type": "single_choice",
           "options": [
-            { "text": "Rarely (once a week or less)", "score": 0 },
-            { "text": "Occasionally (2-3 times a week)", "score": 1 },
-            { "text": "Frequently (4-5 times a week)", "score": 2 },
-            { "text": "Daily or almost daily", "score": 3 },
-            { "text": "Multiple times daily", "score": 4 }
+            {
+              "text": "Rarely (once a week or less)",
+              "score": 0
+            },
+            {
+              "text": "Occasionally (2-3 times a week)",
+              "score": 1
+            },
+            {
+              "text": "Frequently (4-5 times a week)",
+              "score": 2
+            },
+            {
+              "text": "Daily or almost daily",
+              "score": 3
+            },
+            {
+              "text": "Multiple times daily",
+              "score": 4
+            }
           ]
         },
         {
@@ -278,11 +479,26 @@
           "text": "What is your water intake pattern?",
           "type": "single_choice",
           "options": [
-            { "text": "Drink adequate warm/room temperature water throughout day", "score": 0 },
-            { "text": "Drink sufficient water but prefer cold", "score": 1 },
-            { "text": "Drink less than needed (feel thirsty often)", "score": 2 },
-            { "text": "Very low water intake", "score": 3 },
-            { "text": "Excessive intake or drink mostly cold beverages", "score": 2 }
+            {
+              "text": "Drink adequate warm/room temperature water throughout day",
+              "score": 0
+            },
+            {
+              "text": "Drink sufficient water but prefer cold",
+              "score": 1
+            },
+            {
+              "text": "Drink less than needed (feel thirsty often)",
+              "score": 2
+            },
+            {
+              "text": "Very low water intake",
+              "score": 3
+            },
+            {
+              "text": "Excessive intake or drink mostly cold beverages",
+              "score": 2
+            }
           ]
         },
         {
@@ -290,11 +506,26 @@
           "text": "Do you experience strong cravings for specific foods?",
           "type": "single_choice",
           "options": [
-            { "text": "No particular cravings", "score": 0 },
-            { "text": "Occasional cravings for sweet/salty", "score": 1 },
-            { "text": "Frequent cravings for sugar/carbs", "score": 2 },
-            { "text": "Uncontrollable cravings affecting eating pattern", "score": 3 },
-            { "text": "Emotional eating or binge eating", "score": 4 }
+            {
+              "text": "No particular cravings",
+              "score": 0
+            },
+            {
+              "text": "Occasional cravings for sweet/salty",
+              "score": 1
+            },
+            {
+              "text": "Frequent cravings for sugar/carbs",
+              "score": 2
+            },
+            {
+              "text": "Uncontrollable cravings affecting eating pattern",
+              "score": 3
+            },
+            {
+              "text": "Emotional eating or binge eating",
+              "score": 4
+            }
           ]
         }
       ]
@@ -308,11 +539,26 @@
           "text": "How would you describe your daily physical activity?",
           "type": "single_choice",
           "options": [
-            { "text": "Active lifestyle with regular exercise (30+min/day)", "score": 0 },
-            { "text": "Moderate activity (walking, household work)", "score": 1 },
-            { "text": "Mostly sedentary with minimal movement", "score": 2 },
-            { "text": "Completely sedentary lifestyle", "score": 3 },
-            { "text": "Irregular - sometimes active, mostly inactive", "score": 2 }
+            {
+              "text": "Active lifestyle with regular exercise (30+min/day)",
+              "score": 0
+            },
+            {
+              "text": "Moderate activity (walking, household work)",
+              "score": 1
+            },
+            {
+              "text": "Mostly sedentary with minimal movement",
+              "score": 2
+            },
+            {
+              "text": "Completely sedentary lifestyle",
+              "score": 3
+            },
+            {
+              "text": "Irregular - sometimes active, mostly inactive",
+              "score": 2
+            }
           ]
         },
         {
@@ -320,11 +566,26 @@
           "text": "What is your typical sleep pattern?",
           "type": "single_choice",
           "options": [
-            { "text": "Sound sleep 7-8 hours, sleep before 11 PM", "score": 0 },
-            { "text": "Good sleep but late nights (after 11 PM)", "score": 1 },
-            { "text": "Disturbed sleep or less than 6 hours", "score": 2 },
-            { "text": "Difficulty falling asleep or frequent waking", "score": 3 },
-            { "text": "Severe insomnia or irregular sleep schedule", "score": 4 }
+            {
+              "text": "Sound sleep 7-8 hours, sleep before 11 PM",
+              "score": 0
+            },
+            {
+              "text": "Good sleep but late nights (after 11 PM)",
+              "score": 1
+            },
+            {
+              "text": "Disturbed sleep or less than 6 hours",
+              "score": 2
+            },
+            {
+              "text": "Difficulty falling asleep or frequent waking",
+              "score": 3
+            },
+            {
+              "text": "Severe insomnia or irregular sleep schedule",
+              "score": 4
+            }
           ]
         },
         {
@@ -332,11 +593,26 @@
           "text": "How often do you experience constipation or irregular bowel movements?",
           "type": "single_choice",
           "options": [
-            { "text": "Regular daily bowel movements", "score": 0 },
-            { "text": "Occasional irregularity", "score": 1 },
-            { "text": "Frequent constipation (2-3 times/week)", "score": 2 },
-            { "text": "Chronic constipation requiring medicine", "score": 3 },
-            { "text": "Alternating constipation and loose motions", "score": 3 }
+            {
+              "text": "Regular daily bowel movements",
+              "score": 0
+            },
+            {
+              "text": "Occasional irregularity",
+              "score": 1
+            },
+            {
+              "text": "Frequent constipation (2-3 times/week)",
+              "score": 2
+            },
+            {
+              "text": "Chronic constipation requiring medicine",
+              "score": 3
+            },
+            {
+              "text": "Alternating constipation and loose motions",
+              "score": 3
+            }
           ]
         },
         {
@@ -344,11 +620,26 @@
           "text": "What is your daily routine like?",
           "type": "single_choice",
           "options": [
-            { "text": "Regular routine with fixed meal and sleep times", "score": 0 },
-            { "text": "Mostly regular with some variations", "score": 1 },
-            { "text": "Irregular routine due to work/study", "score": 2 },
-            { "text": "Highly irregular - no fixed pattern", "score": 3 },
-            { "text": "Frequent night shifts or changing schedules", "score": 4 }
+            {
+              "text": "Regular routine with fixed meal and sleep times",
+              "score": 0
+            },
+            {
+              "text": "Mostly regular with some variations",
+              "score": 1
+            },
+            {
+              "text": "Irregular routine due to work/study",
+              "score": 2
+            },
+            {
+              "text": "Highly irregular - no fixed pattern",
+              "score": 3
+            },
+            {
+              "text": "Frequent night shifts or changing schedules",
+              "score": 4
+            }
           ]
         }
       ]
@@ -362,11 +653,26 @@
           "text": "How often do you experience stress, anxiety, or feeling overwhelmed?",
           "type": "single_choice",
           "options": [
-            { "text": "Rarely stressed, generally calm", "score": 0 },
-            { "text": "Occasionally stressed but manage well", "score": 1 },
-            { "text": "Frequently stressed or anxious", "score": 2 },
-            { "text": "Constantly stressed affecting daily life", "score": 3 },
-            { "text": "Severe anxiety/depression requiring help", "score": 4 }
+            {
+              "text": "Rarely stressed, generally calm",
+              "score": 0
+            },
+            {
+              "text": "Occasionally stressed but manage well",
+              "score": 1
+            },
+            {
+              "text": "Frequently stressed or anxious",
+              "score": 2
+            },
+            {
+              "text": "Constantly stressed affecting daily life",
+              "score": 3
+            },
+            {
+              "text": "Severe anxiety/depression requiring help",
+              "score": 4
+            }
           ]
         },
         {
@@ -374,11 +680,26 @@
           "text": "Have you noticed mood swings, irritability, or emotional changes?",
           "type": "single_choice",
           "options": [
-            { "text": "Emotionally stable and balanced", "score": 0 },
-            { "text": "Mild mood changes occasionally", "score": 1 },
-            { "text": "Noticeable mood swings pre-menstrually", "score": 2 },
-            { "text": "Frequent irritability and emotional ups/downs", "score": 3 },
-            { "text": "Severe mood disturbances or depression", "score": 4 }
+            {
+              "text": "Emotionally stable and balanced",
+              "score": 0
+            },
+            {
+              "text": "Mild mood changes occasionally",
+              "score": 1
+            },
+            {
+              "text": "Noticeable mood swings pre-menstrually",
+              "score": 2
+            },
+            {
+              "text": "Frequent irritability and emotional ups/downs",
+              "score": 3
+            },
+            {
+              "text": "Severe mood disturbances or depression",
+              "score": 4
+            }
           ]
         },
         {
@@ -386,11 +707,26 @@
           "text": "(Bonus) Which description matches you best (Prakriti Assessment)?",
           "type": "single_choice",
           "options": [
-            { "text": "Vata: Lean build, dry skin, irregular appetite, creative, anxious tendencies", "score": 0 },
-            { "text": "Pitta: Medium build, warm body, strong appetite, organized, perfectionist", "score": 0 },
-            { "text": "Kapha: Solid build, smooth skin, steady appetite, calm, sometimes lazy", "score": 0 },
-            { "text": "Vata-Pitta: Mix of first two", "score": 0 },
-            { "text": "Not sure", "score": 0 }
+            {
+              "text": "Vata: Lean build, dry skin, irregular appetite, creative, anxious tendencies",
+              "score": 0
+            },
+            {
+              "text": "Pitta: Medium build, warm body, strong appetite, organized, perfectionist",
+              "score": 0
+            },
+            {
+              "text": "Kapha: Solid build, smooth skin, steady appetite, calm, sometimes lazy",
+              "score": 0
+            },
+            {
+              "text": "Vata-Pitta: Mix of first two",
+              "score": 0
+            },
+            {
+              "text": "Not sure",
+              "score": 0
+            }
           ]
         }
       ]
@@ -404,11 +740,26 @@
           "text": "Do any of your close female relatives have PCOS/PCOD, diabetes, or thyroid issues?",
           "type": "single_choice",
           "options": [
-            { "text": "No family history", "score": 0 },
-            { "text": "One relative with one condition", "score": 1 },
-            { "text": "Multiple relatives with similar conditions", "score": 2 },
-            { "text": "Strong family history of diabetes/hormonal issues", "score": 4 },
-            { "text": "Not aware of family history", "score": 0 }
+            {
+              "text": "No family history",
+              "score": 0
+            },
+            {
+              "text": "One relative with one condition",
+              "score": 1
+            },
+            {
+              "text": "Multiple relatives with similar conditions",
+              "score": 2
+            },
+            {
+              "text": "Strong family history of diabetes/hormonal issues",
+              "score": 4
+            },
+            {
+              "text": "Not aware of family history",
+              "score": 0
+            }
           ]
         },
         {
@@ -416,12 +767,30 @@
           "text": "Have you been diagnosed with any of the following? (Check all that apply)",
           "type": "multi_choice",
           "options": [
-            { "text": "None of these", "score": 0 },
-            { "text": "Diabetes or Pre-diabetes", "score": 2 },
-            { "text": "Thyroid disorder", "score": 2 },
-            { "text": "High cholesterol or blood pressure", "score": 2 },
-            { "text": "PCOS/PCOD (confirmed by doctor)", "score": 4 },
-            { "text": "Other hormonal imbalance", "score": 2 }
+            {
+              "text": "None of these",
+              "score": 0
+            },
+            {
+              "text": "Diabetes or Pre-diabetes",
+              "score": 2
+            },
+            {
+              "text": "Thyroid disorder",
+              "score": 2
+            },
+            {
+              "text": "High cholesterol or blood pressure",
+              "score": 2
+            },
+            {
+              "text": "PCOS/PCOD (confirmed by doctor)",
+              "score": 4
+            },
+            {
+              "text": "Other hormonal imbalance",
+              "score": 2
+            }
           ]
         }
       ]

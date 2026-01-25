@@ -1,7 +1,7 @@
 const COLORS = {
     background: '#F3F1F5', // Soft Lavender/White
-    primary: '#6A4C93',    // Royal Purple
-    secondary: '#1982C4',  // Blue/Teal
+    primary: '#008080',    // PCOD Teal
+    secondary: '#6A4C93',  // Royal Purple
     text: '#3D405B',       // Dark Blue-Grey
     textLight: '#8D99AE',
     white: '#FFFFFF',

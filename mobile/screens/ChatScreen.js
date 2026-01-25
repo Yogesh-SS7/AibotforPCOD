@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { View, Text, StyleSheet, TextInput, TouchableOpacity, FlatList, KeyboardAvoidingView, Platform, ActivityIndicator } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { COLORS, SIZES } from '../theme';
@@ -6,13 +6,34 @@ import { COLORS, SIZES } from '../theme';
 import api from '../services/api';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
+const TypeWriter = ({ text, onComplete }) => {
+    const [displayedText, setDisplayedText] = useState('');
+
+    useEffect(() => {
+        let index = 0;
+        const timer = setInterval(() => {
+            if (index < text.length) {
+                setDisplayedText((prev) => prev + text.charAt(index));
+                index++;
+            } else {
+                clearInterval(timer);
+                if (onComplete) onComplete();
+            }
+        }, 30); // Speed of typing
+        return () => clearInterval(timer);
+    }, [text]);
+
+    return <Text style={styles.aiText}>{displayedText}</Text>;
+};
+
 export default function ChatScreen() {
     const [messages, setMessages] = useState([
-        { id: '0', text: 'Namaste! I am your Ayurvedic assistant. How can I help you today?', sender: 'AI' }
+        { id: '0', text: 'Namaste! I am your Ayurvedic assistant. How can I help you today?', sender: 'AI', animate: false }
     ]);
     const [input, setInput] = useState('');
     const [loading, setLoading] = useState(false);
     const [context, setContext] = useState(null);
+    const flatListRef = useRef();
 
     useEffect(() => {
         AsyncStorage.getItem('pcod_context').then(data => {
@@ -31,27 +52,26 @@ export default function ChatScreen() {
         try {
             const res = await api.post('/chat', {
                 message: userMsg.text,
-                context: context // Send PCOD context if available
+                context: context
             });
             const aiMsg = {
                 id: (Date.now() + 1).toString(),
                 text: res.data.response,
-                sender: 'AI'
+                sender: 'AI',
+                animate: true // Trigger typewriter for new message
             };
             setMessages(prev => [...prev, aiMsg]);
+        } catch (error) {
             console.error("Chat Error:", error);
             let userFriendlyError = "I'm having trouble connecting to nature right now.";
-
-            if (error.code === 'ECONNABORTED') {
-                userFriendlyError = "I'm taking a bit too long to meditate on that. Please try again.";
-            } else if (error.message === 'Network Error') {
-                userFriendlyError = "I cannot reach the server. Please check your connection (IP/Wifi).";
-            }
+            if (error.code === 'ECONNABORTED') userFriendlyError = "I'm taking a bit too long to meditate on that. Please try again.";
+            else if (error.message === 'Network Error') userFriendlyError = "I cannot reach the server. Please check your connection (IP/Wifi).";
 
             const errorMsg = {
                 id: (Date.now() + 1).toString(),
-                text: `${userFriendlyError} (Debug: ${error.message})`,
-                sender: 'AI'
+                text: userFriendlyError,
+                sender: 'AI',
+                animate: true
             };
             setMessages(prev => [...prev, errorMsg]);
         } finally {
@@ -66,10 +86,14 @@ export default function ChatScreen() {
                 styles.msgContainer,
                 isUser ? styles.userMsg : styles.aiMsg
             ]}>
-                <Text style={[
-                    styles.msgText,
-                    isUser ? styles.userText : styles.aiText
-                ]}>{item.text}</Text>
+                {isUser || !item.animate ? (
+                    <Text style={[styles.msgText, isUser ? styles.userText : styles.aiText]}>{item.text}</Text>
+                ) : (
+                    <TypeWriter text={item.text} onComplete={() => {
+                        // Optional: Mark as animated so it doesnt re-animate on scroll
+                        item.animate = false;
+                    }} />
+                )}
             </View>
         );
     };
@@ -77,27 +101,30 @@ export default function ChatScreen() {
     return (
         <SafeAreaView style={styles.container} edges={['top']}>
             <View style={styles.header}>
-                <Text style={styles.headerTitle}>Ayurvedic Assistant</Text>
+                <Text style={styles.headerTitle}>Health Assistant</Text>
             </View>
 
-            <FlatList
-                data={messages}
-                renderItem={renderItem}
-                keyExtractor={item => item.id}
-                contentContainerStyle={styles.list}
-            />
-
-            {loading && (
-                <View style={{ padding: 10, alignItems: 'center' }}>
-                    <ActivityIndicator color={COLORS.secondary} />
-                    <Text style={{ marginTop: 5, color: '#888', fontStyle: 'italic' }}>Thinking... (this may take a minute)</Text>
-                </View>
-            )}
-
             <KeyboardAvoidingView
+                style={{ flex: 1 }}
                 behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-                keyboardVerticalOffset={Platform.OS === 'ios' ? 100 : 0}
+                keyboardVerticalOffset={Platform.OS === 'ios' ? 0 : 0} // Adjust if needed
             >
+                <FlatList
+                    ref={flatListRef}
+                    data={messages}
+                    renderItem={renderItem}
+                    keyExtractor={item => item.id}
+                    contentContainerStyle={styles.list}
+                    onContentSizeChange={() => flatListRef.current?.scrollToEnd({ animated: true })}
+                />
+
+                {loading && (
+                    <View style={{ padding: 10, alignItems: 'center' }}>
+                        <ActivityIndicator color={COLORS.secondary} />
+                        <Text style={{ marginTop: 5, color: '#888', fontStyle: 'italic' }}>Ritu is thinking...</Text>
+                    </View>
+                )}
+
                 <View style={styles.inputContainer}>
                     <TextInput
                         style={styles.input}
@@ -119,7 +146,7 @@ const styles = StyleSheet.create({
     container: { flex: 1, backgroundColor: COLORS.background },
     header: { padding: 15, backgroundColor: COLORS.white, borderBottomWidth: 1, borderColor: '#eee', alignItems: 'center' },
     headerTitle: { fontSize: 18, fontWeight: 'bold', color: COLORS.primary },
-    list: { padding: SIZES.padding },
+    list: { flexGrow: 1, padding: SIZES.padding, paddingBottom: 20 },
     msgContainer: {
         maxWidth: '80%',
         padding: 12,
@@ -139,8 +166,8 @@ const styles = StyleSheet.create({
         borderColor: '#ddd',
     },
     msgText: { fontSize: 16, lineHeight: 22 },
+    aiText: { fontSize: 16, lineHeight: 22, color: COLORS.text },
     userText: { color: COLORS.white },
-    aiText: { color: COLORS.text },
     inputContainer: {
         flexDirection: 'row',
         padding: 10,
@@ -148,7 +175,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         borderTopWidth: 1,
         borderColor: '#eee',
-        marginBottom: 20, // Lift up from bottom edge
     },
     input: {
         flex: 1,

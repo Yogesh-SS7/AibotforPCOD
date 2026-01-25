@@ -16,14 +16,14 @@ export default function DiagnosticScreen({ navigation }) {
     const [inputText, setInputText] = useState("");
 
 
-    const [userEmail, setUserEmail] = useState(null);
+    const [userId, setUserId] = useState(null);
 
     useEffect(() => {
         // Load user email
         AsyncStorage.getItem('user').then(data => {
             if (data) {
                 const user = JSON.parse(data);
-                if (user.email) setUserEmail(user.email);
+                if (user.id) setUserId(user.id);
             }
         });
 
@@ -84,7 +84,7 @@ export default function DiagnosticScreen({ navigation }) {
     const submitAnalysis = async (finalAnswers) => {
         setLoading(true);
         try {
-            const payload = { answers: finalAnswers, email: userEmail };
+            const payload = { answers: finalAnswers, userId: userId };
             const res = await api.post('/pcod/submit', payload);
             setResult(res.data);
 

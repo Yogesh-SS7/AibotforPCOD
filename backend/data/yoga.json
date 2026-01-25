@@ -1,0 +1,23 @@
+[
+    {
+        "id": "butterfly",
+        "name": "Baddhakonasana (Butterfly Pose)",
+        "benefits": "Opens up the hips, improves blood circulation to the pelvic region, and helps regulate menstrual cycles.",
+        "instructions": "1. Sit with your spine straight and legs spread out.\n2. Bend your knees and bring your feet towards your pelvis.\n3. Hold your feet tightly with your hands.\n4. Flap your legs like a butterfly for 1-2 minutes.",
+        "duration": "2 mins"
+    },
+    {
+        "id": "cobra",
+        "name": "Bhujangasana (Cobra Pose)",
+        "benefits": "Stretches the abdomen and stimulates the ovaries, helping in hormonal balance.",
+        "instructions": "1. Lie on your stomach with your legs together.\n2. Place your hands under your shoulders.\n3. Inhale and lift your head and chest off the ground.\n4. Hold for 15-30 seconds while breathing normally.",
+        "duration": "30 secs"
+    },
+    {
+        "id": "child",
+        "name": "Balasana (Child's Pose)",
+        "benefits": "Relaxes the body, reduces stress and fatigue, which are common in PCOD.",
+        "instructions": "1. Kneel on the floor with your big toes touching.\n2. Sit on your heels and separate your knees slightly.\n3. Exhale and lay your torso down between your thighs.\n4. Rest your hands on the floor alongside your torso.",
+        "duration": "1 min"
+    }
+]

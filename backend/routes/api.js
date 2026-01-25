@@ -4,6 +4,7 @@ const chatController = require('../controllers/chatController');
 const prakritiController = require('../controllers/prakritiController');
 const diagnosticController = require('../controllers/diagnosticController');
 const remediesController = require('../controllers/remediesController');
+const yogaController = require('../controllers/yogaController');
 
 // Chat
 router.post('/chat', chatController.chat);
@@ -25,5 +26,8 @@ router.post('/pcod/explain', pcodController.explainResult);
 
 // Remedies
 router.get('/remedies', remediesController.getRemedies);
+
+// Yoga
+router.get('/yoga', yogaController.getYogaPoses);
 
 module.exports = router;

@@ -26,6 +26,11 @@ const chatWithAI = async (userMessage, contextData = null) => {
         let finalSystemPrompt = SYSTEM_PROMPT;
         if (contextData) {
             finalSystemPrompt += `\n\nUSER CONTEXT:\n${JSON.stringify(contextData, null, 2)}\nUse this context to personalize your advice.`;
+
+            // Language Instruction
+            if (contextData.language && contextData.language !== 'English') {
+                finalSystemPrompt += `\n\nIMPORTANT: The user speaks ${contextData.language}. Please respond in ${contextData.language} (or Hinglish if appropriate for Hindi).`;
+            }
         }
 
         const response = await axios.post(OLLAMA_URL, {

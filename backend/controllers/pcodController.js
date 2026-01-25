@@ -39,20 +39,20 @@ const submitAssessment = (req, res) => {
             disclaimer: "This tool is for screening purposes only and does not replace professional medical advice."
         };
 
-        // Save to patients.json if email is provided
-        const { email } = req.body;
-        console.log(`[PCOD Submit] Received submission. Email: ${email ? email : 'MISSING'}`);
-        if (email) {
+        // Save to patients.json if userId is provided
+        const { userId } = req.body;
+        console.log(`[PCOD Submit] Received submission. UserID: ${userId ? userId : 'MISSING'}`);
+        if (userId) {
             try {
                 let patients = {};
                 if (fs.existsSync(PATIENTS_FILE)) {
                     patients = JSON.parse(fs.readFileSync(PATIENTS_FILE, 'utf8'));
                 }
 
-                // Update or create patient record
-                patients[email] = {
-                    ...patients[email],
-                    email,
+                // Update or create patient record using ID
+                patients[userId] = {
+                    ...patients[userId],
+                    userId,
                     latest_assessment: {
                         timestamp: new Date().toISOString(),
                         ...response
@@ -60,10 +60,9 @@ const submitAssessment = (req, res) => {
                 };
 
                 fs.writeFileSync(PATIENTS_FILE, JSON.stringify(patients, null, 2));
-                console.log(`Saved assessment for ${email}`);
+                console.log(`Saved assessment for User ${userId}`);
             } catch (fsError) {
                 console.error("Error saving pcod data:", fsError);
-                // Don't fail the request just because save failed
             }
         }
 

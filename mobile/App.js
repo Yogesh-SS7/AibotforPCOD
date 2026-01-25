@@ -10,6 +10,8 @@ import PrakritiScreen from './screens/PrakritiScreen';
 import ChatScreen from './screens/ChatScreen';
 import RemediesScreen from './screens/RemediesScreen';
 import DiagnosticScreen from './screens/DiagnosticScreen';
+import YogaScreen from './screens/YogaScreen';
+import BMIScreen from './screens/BMIScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -25,6 +27,8 @@ export default function App() {
           <Stack.Screen name="Chat" component={ChatScreen} />
           <Stack.Screen name="Remedies" component={RemediesScreen} />
           <Stack.Screen name="Diagnostic" component={DiagnosticScreen} />
+          <Stack.Screen name="Yoga" component={YogaScreen} />
+          <Stack.Screen name="BMI" component={BMIScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>
