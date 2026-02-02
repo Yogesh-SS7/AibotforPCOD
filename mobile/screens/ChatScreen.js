@@ -28,7 +28,7 @@ const TypeWriter = ({ text, onComplete }) => {
 
 export default function ChatScreen() {
     const [messages, setMessages] = useState([
-        { id: '0', text: 'Namaste! I am your Ayurvedic assistant. How can I help you today?', sender: 'AI', animate: false }
+        { id: '0', text: 'Namaste! I am your health assistant. How can I help you today?', sender: 'AI', animate: false }
     ]);
     const [input, setInput] = useState('');
     const [loading, setLoading] = useState(false);
@@ -36,8 +36,18 @@ export default function ChatScreen() {
     const flatListRef = useRef();
 
     useEffect(() => {
+        // Load PCOD Context
         AsyncStorage.getItem('pcod_context').then(data => {
             if (data) setContext(JSON.parse(data));
+        });
+        // Also ensure we have user context
+        AsyncStorage.getItem('user').then(data => {
+            if (data) {
+                const u = JSON.parse(data);
+                if (u.id) {
+                    setContext(prev => ({ ...prev, id: u.id, ...u }));
+                }
+            }
         });
     }, []);
 
@@ -50,9 +60,21 @@ export default function ChatScreen() {
         setLoading(true);
 
         try {
+            // Get User ID from context or storage to send to backend
+            let currentUserId = null;
+            if (context && context.id) currentUserId = context.id;
+            else {
+                const userStr = await AsyncStorage.getItem('user'); // Fallback
+                if (userStr) {
+                    const u = JSON.parse(userStr);
+                    currentUserId = u.id;
+                }
+            }
+
             const res = await api.post('/chat', {
                 message: userMsg.text,
-                context: context
+                context: context,
+                userId: currentUserId
             });
             const aiMsg = {
                 id: (Date.now() + 1).toString(),

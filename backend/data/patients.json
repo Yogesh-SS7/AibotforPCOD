@@ -13,5 +13,50 @@
       ],
       "disclaimer": "This tool is for screening purposes only and does not replace professional medical advice."
     }
+  },
+  "2": {
+    "userId": "2",
+    "latest_assessment": {
+      "timestamp": "2026-01-25T16:41:53.178Z",
+      "risk_category": "Moderate Risk",
+      "score": 36,
+      "observed_patterns": [],
+      "recommendations": [
+        "Consult a gynecologist",
+        "Focus on diet and exercise",
+        "Monitor symptoms"
+      ],
+      "disclaimer": "This tool is for screening purposes only and does not replace professional medical advice."
+    }
+  },
+  "3": {
+    "userId": "3",
+    "latest_assessment": {
+      "timestamp": "2026-01-26T07:10:02.533Z",
+      "risk_category": "Moderate Risk",
+      "score": 27,
+      "observed_patterns": [],
+      "recommendations": [
+        "Consult a gynecologist",
+        "Focus on diet and exercise",
+        "Monitor symptoms"
+      ],
+      "disclaimer": "This tool is for screening purposes only and does not replace professional medical advice."
+    }
+  },
+  "4": {
+    "userId": "4",
+    "latest_assessment": {
+      "timestamp": "2026-02-02T05:19:54.864Z",
+      "risk_category": "Moderate Risk",
+      "score": 46,
+      "observed_patterns": [],
+      "recommendations": [
+        "Consult a gynecologist",
+        "Focus on diet and exercise",
+        "Monitor symptoms"
+      ],
+      "disclaimer": "This tool is for screening purposes only and does not replace professional medical advice."
+    }
   }
 }
